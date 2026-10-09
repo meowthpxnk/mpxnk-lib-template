@@ -103,7 +103,7 @@ minversion = "6.0"
 testpaths = ["pytest"]        # Where to look for tests
 python_files = ["test_*.py"] # Test file pattern
 pythonpath = ["."]           # Add root to Python path
-addopts = "-v -x --tb=short --suppress-no-tests-run" # Verbose, stop on first fail, short traceback
+addopts = "-v -x --tb=short --suppress-no-test-exit-code" # Verbose, stop on first fail, short traceback
 markers = [
     "unit: Quick core isolated tests",
     "integration: Heavy integration tests with fixtures",

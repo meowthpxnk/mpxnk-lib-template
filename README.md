@@ -22,3 +22,7 @@ poetry run rename_lib
 4. Update and push your project.
 
 5. Go to github repository actions and run CI/CD workflow.
+
+## Workflow usage
+
+Workflow has
