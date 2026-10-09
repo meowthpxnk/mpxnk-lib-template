@@ -28,6 +28,7 @@ packages = [{ include = "YOUR_PACKAGE_NAME" }]
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.4.0"          # Fast linter, formatter, import sorter
 pytest = "^8.0"          # Testing framework
+pytest-custom-exit-code = "^1.3.0"
 pre-commit = "^3.7"      # Git hook manager
 python-dotenv = "^1.1.1"
 # -> for semantic release
@@ -102,7 +103,7 @@ minversion = "6.0"
 testpaths = ["pytest"]        # Where to look for tests
 python_files = ["test_*.py"] # Test file pattern
 pythonpath = ["."]           # Add root to Python path
-addopts = "-v -x --tb=short" # Verbose, stop on first fail, short traceback
+addopts = "-v -x --tb=short --suppress-no-tests-run" # Verbose, stop on first fail, short traceback
 markers = [
     "unit: Quick core isolated tests",
     "integration: Heavy integration tests with fixtures",
