@@ -66,11 +66,9 @@ exclude = [
     ".venv",
     "venv",
     "env",
-    "migrations",
-    "migration",
     "__init__.py",
     "README.md",
-    "./database/versions",
+    "/scripts",
 ]
 
 [tool.ruff.lint]
@@ -130,3 +128,9 @@ match = "support/v0.1.x"
 # =============================================================================
 [tool.semantic_release.changelog.categories]
 changelog_file = "CHANGELOG.md"
+
+# =============================================================================
+# 🕹️ User scripts
+# =============================================================================
+[tool.poetry.scripts]
+rename_lib = "scripts.rename_lib:main"
