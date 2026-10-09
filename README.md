@@ -1,6 +1,7 @@
 # My own python library tempolate
 
 - [Template usage](#template-usage)
+- [Template update](#template-update)
 - [Workflow usage](#workflow-usage)
 - [Customise changelog](#customise-changelog)
 - [Support oldest versions](#support-oldest-versions)
@@ -27,6 +28,21 @@ poetry run rename_lib
 2. ❗️ALERT❗️Replace README.md with your package docs.
 3. Create commit with message such as `feat!: Init project`. Push.
 4. Go to github repository actions and run CI/CD workflow.
+
+## Template update
+
+1. Add template upstream
+
+```sh
+git remote add template-upstream https://github.com/meowthpxnk/mpxnk-lib-template
+```
+
+1. Fetch upstream and merge changes
+
+```sh
+git fetch template-upstream
+git merge template-upstream/main --allow-unrelated-histories -m "chore: sync template"
+```
 
 ## Workflow usage
 
