@@ -64,3 +64,39 @@ git pull
 - ❌ Release
 - ✅ Build
 - ✅ Publish
+
+## For support oldest versions
+
+1. Create branch from oldest version
+   Example:
+
+```sh
+git checkout -b support/v0.1.x v0.1.5
+```
+
+2. Fix bug
+
+3. Update branch
+
+```sh
+git add .
+git commit -m "fix: Main fix 0.1.x"
+git push origin support/v0.1.x
+```
+
+4. Add version for build in `pyproject.toml`
+
+```toml
+[tool.semantic_release.branches.support-v01]
+match = "support/v0.1.x"
+```
+
+5. Use workflow with from your branch name `support/v0.1.x` and publish version
+
+6. If u need to deploy this fix to main version merge branch and publish again from branch `main`
+
+```sh
+git checkout main
+git merge support/v0.1.x
+git push origin main
+```
