@@ -52,7 +52,7 @@ jobs:
   pypi-publish:
     runs-on: ubuntu-latest
     needs: main-pipeline
-    if: \${{ github.event.inputs.run-build == 'true' && github.event.inputs.publish-to-pypi == 'true' }}
+    if: ${{ github.event.inputs.run-build == 'true' && github.event.inputs.publish-to-pypi == 'true' }}
     permissions:
       id-token: write
     environment:
