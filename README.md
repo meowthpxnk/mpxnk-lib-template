@@ -1,13 +1,9 @@
 # My own python library tempolate
 
----
-
 - [Template usage](#template-usage)
 - [Workflow usage](#workflow-usage)
 - [Customise changelog](#customise-changelog)
 - [Support oldest versions](#support-oldest-versions)
-
----
 
 ## Template usage
 
@@ -31,8 +27,6 @@ poetry run rename_lib
 2. ❗️ALERT❗️Replace README.md with your package docs.
 3. Create commit with message such as `feat!: Init project`. Push.
 4. Go to github repository actions and run CI/CD workflow.
-
----
 
 ## Workflow usage
 
@@ -71,8 +65,6 @@ git pull
 - ❌ Release
 - ✅ Build
 - ✅ Publish
-
----
 
 ## Support oldest versions
 
