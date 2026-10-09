@@ -121,9 +121,6 @@ commit_parser = "conventional"
 [tool.semantic_release.branches.main]
 match = "main"
 
-[tool.semantic_release.branches.support-v01]
-match = "support/v0.1.x"
-
 # =============================================================================
 # 📜 Settings CHANGELOG.md
 # =============================================================================
