@@ -18,16 +18,22 @@
 - Workflow name - `publish.yaml`
 - Environment name - `publish`
 
-1. Run renaming script
+2. Clone repository on your pc
+
+```sh
+git clone https://github.com/meowthpxnk/PROJECT_NAME
+```
+
+3. Run renaming script
 
 ```sh
 poetry run rename_lib
 ```
 
-1. ❗️ALERT❗️Replace `LIB_DESCRIPTION` in pyproject.toml with your library description.
-2. ❗️ALERT❗️Replace README.md with your package docs.
-3. Create commit with message such as `feat!: Init project`. Push.
-4. Go to github repository actions and run CI/CD workflow.
+4. ❗️ALERT❗️Replace `LIB_DESCRIPTION` in pyproject.toml with your library description.
+5. ❗️ALERT❗️Replace README.md with your package docs.
+6. Create commit with message such as `feat!: Init project`. Push.
+7. Go to github repository actions and run CI/CD workflow.
 
 ## Template update
 
