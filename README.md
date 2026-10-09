@@ -43,7 +43,7 @@ poetry run rename_lib
 git remote add template-upstream https://github.com/meowthpxnk/mpxnk-lib-template
 ```
 
-1. Fetch upstream and merge changes
+2. Fetch upstream and merge changes
 
 ```sh
 git fetch template-upstream
