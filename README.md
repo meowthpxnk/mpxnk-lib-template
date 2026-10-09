@@ -19,10 +19,46 @@ poetry run rename_lib
 
 3. Replace `LIB_DESCRIPTION` in pyproject.toml with your library description.
 
-4. Update and push your project.
+4. Create commit with message such as `feat!: Init project`. Push.
 
 5. Go to github repository actions and run CI/CD workflow.
 
 ## Workflow usage
 
-Workflow has
+Workflow has environment variables:
+
+- run-lint - Run linting
+- run-tests - Run pytests tests
+- run-release - Create release version
+- run-build - Build project into tmp folder
+- publish-to-pypi - Finally publish to pypi
+
+You can run some jobs if you need, only lint or only tests.
+
+## For customise Changelog
+
+1. Run workflow with variables
+
+- ✅ Lint
+- ✅ Tests
+- ✅ Release
+- ✅ Build
+- ❌ Publish
+
+2. Pull repository
+
+```sh
+git pull
+```
+
+3. Change changelog custom
+
+4. Commit changes
+
+5. Run workflow with variables
+
+- ✅ Lint
+- ✅ Tests
+- ❌ Release
+- ✅ Build
+- ✅ Publish
