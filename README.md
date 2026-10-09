@@ -17,11 +17,13 @@
 poetry run rename_lib
 ```
 
-3. Replace `LIB_DESCRIPTION` in pyproject.toml with your library description.
+3. ❗️ALERT❗️Replace `LIB_DESCRIPTION` in pyproject.toml with your library description.
 
-4. Create commit with message such as `feat!: Init project`. Push.
+4. ❗️ALERT❗️Replace README.md with your package docs.
 
-5. Go to github repository actions and run CI/CD workflow.
+5. Create commit with message such as `feat!: Init project`. Push.
+
+6. Go to github repository actions and run CI/CD workflow.
 
 ## Workflow usage
 
