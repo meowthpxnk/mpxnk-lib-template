@@ -43,9 +43,12 @@ def main():
     # Generate underscore version for packages/imports
     new_name_underscore = new_name_dash.replace("-", "_")
 
-    # Target placeholders to find in pyproject.toml
+    # New target placeholders with curly braces as they appear in your pyproject.toml
     old_name_dash = "{ YOUR-PACKAGE-NAME }"
     old_name_underscore = "{ YOUR_PACKAGE_NAME }"
+
+    # Raw directory name to find on disk (without braces)
+    old_folder_raw = "YOUR_PACKAGE_NAME"
 
     print("🔄 Starting the renaming process...")
 
@@ -56,7 +59,7 @@ def main():
         # Check if placeholders exist in the file
         if old_name_dash not in content and old_name_underscore not in content:
             print(
-                "ℹ️ Warning: 'YOUR-PACKAGE-NAME' placeholders not found in pyproject.toml. Already renamed?"
+                "ℹ️ Warning: Curly braced placeholders not found in pyproject.toml. Already renamed?"
             )
         else:
             updated_content = content.replace(old_name_dash, new_name_dash)
@@ -69,15 +72,15 @@ def main():
         print(f"❌ Error while processing pyproject.toml: {e}")
         sys.exit(1)
 
-    # 3. Rename the source code directory
-    old_folder = root_dir / old_name_underscore
+    # 3. Rename the source code directory (YOUR_PACKAGE_NAME -> mpxnk_test_library)
+    old_folder = root_dir / old_folder_raw
     new_folder = root_dir / new_name_underscore
 
     if old_folder.exists() and old_folder.is_dir():
         try:
             old_folder.rename(new_folder)
             print(
-                f"✅ Folder '{old_name_underscore}' successfully renamed to '{new_name_underscore}'."
+                f"✅ Folder '{old_folder_raw}' successfully renamed to '{new_name_underscore}'."
             )
         except Exception as e:
             print(f"❌ Error while renaming source folder: {e}")
@@ -86,7 +89,7 @@ def main():
         print(f"ℹ️ Folder '{new_name_underscore}' already exists.")
     else:
         print(
-            f"⚠️ Warning: Source folder '{old_name_underscore}' not found for renaming."
+            f"⚠️ Warning: Source folder '{old_folder_raw}' not found for renaming."
         )
 
     print(f"\n🎉 Project successfully renamed to '{new_name_dash}'!")
